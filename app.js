@@ -25,7 +25,7 @@ app.all('*', function (req, res, next) {
         //     return;
         // }
         console.log(req.header('authorization'));
-        request({ url: targetURL + req.url, method: req.method, json: req.body, headers: {'Authorization': req.header('authorization'), 'appId': req.header('appId')} },
+        request({ url: targetURL + req.url, method: req.method, json: req.body, headers: {'Authorization': req.header('authorization'), 'appId': req.header('appId'), 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br', 'Connection': 'keep-alive'} },
             function (error, sresponse, body) {
                 if (error) {
                     console.error('error: ' + response.statusCode)
